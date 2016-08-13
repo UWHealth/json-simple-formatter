@@ -1,3 +1,3 @@
-export default function(program, command) {
+export default function (program, command) {
   return command(program);
 }

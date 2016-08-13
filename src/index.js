@@ -9,4 +9,4 @@ import format from './commands/format';
 addCommand(program, ls);
 addCommand(program, format);
 
-program.parse(process.argv); // notice that we have to parse in a
+program.parse(process.argv);

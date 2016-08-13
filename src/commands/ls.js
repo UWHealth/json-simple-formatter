@@ -7,7 +7,7 @@ function action() {
   printArray(jsonFiles);
 }
 
-export default function(program) {
+export default function (program) {
   program
     .command('ls')
     .description('list all json files in directory')

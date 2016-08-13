@@ -3,7 +3,7 @@ import _path from 'path';
 import listJsonInDirectory from '../utils/listJsonInDirectory';
 
 function sortJsonProperies(json) {
-  if (typeof json == 'object') {
+  if (typeof json === 'object') {
     const keys = Object.keys(json).sort((a, b) => a.localeCompare(b));
     let obj = {};
     keys.forEach((key) => {
@@ -21,7 +21,7 @@ function formatJson(path) {
   const sortedJson = sortJsonProperies(json);
   const prettyJson = JSON.stringify(sortedJson, null, 2);
   fs.writeFileSync(path, prettyJson, 'utf8');
-  console.log(`+  ${path}`);
+  return console.log(`+  ${path}`);
 }
 
 function action(path = '', { all }) {
@@ -37,20 +37,20 @@ function action(path = '', { all }) {
   }
 
   if (all && state.isDirectory) state.error = false;
-  if (!all && state.isFile && /.json$/.test(file)) state.error = false;
+  if (!all && state.isFile && /.json$/.test(fullPath)) state.error = false;
   if (state.error) return console.log('Path error');
 
   let files = [];
   if (all) files = listJsonInDirectory(fullPath).map(file => _path.join(fullPath, file));
   if (!all) files = [path];
-  
-  files.forEach(file => formatJson(file));
+
+  return files.forEach(file => formatJson(file));
 }
 
-export default function(program) {
+export default function (program) {
   program
     .command('format [path]')
     .description('format json file')
-    .option('-a, --all','format all json files in directory')
+    .option('-a, --all', 'format all json files in directory')
     .action(action);
 }

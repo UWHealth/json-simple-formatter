@@ -1,5 +1,6 @@
 {
   "extends": "airbnb-base/legacy",
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true
