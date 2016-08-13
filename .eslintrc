@@ -1,3 +1,8 @@
 {
-	"extends": "airbnb-base/legacy"
+  "extends": "airbnb-base/legacy",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
 }

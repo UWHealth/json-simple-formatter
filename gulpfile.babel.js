@@ -15,7 +15,7 @@ gulp.task('npm:install', ['build'], (cb) => {
   exec('npm i -g', (err, stdout, stderr) => {
     console.log(stdout);
     console.log(stderr);
-    cb(err);
+    cb(null);
   })
 });
 
