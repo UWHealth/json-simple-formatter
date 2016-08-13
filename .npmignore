@@ -1,0 +1,7 @@
+src
+test
+gulpfile.babel.js
+.npmignore
+.gitignore
+.eslintrc
+.babelrc
