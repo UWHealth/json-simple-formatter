@@ -47,5 +47,13 @@
     "cli",
     "terminal"
   ],
-  "version": "1.0.3"
+  "version": "1.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vviital/json-simple-formatter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vviital/json-simple-formatter/issues"
+  },
+  "homepage": "https://github.com/vviital/json-simple-formatter#readme"
 }
