@@ -5,3 +5,4 @@ gulpfile.babel.js
 .gitignore
 .eslintrc
 .babelrc
+npm-debug.log
