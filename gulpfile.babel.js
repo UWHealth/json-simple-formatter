@@ -4,6 +4,7 @@ import babel from 'gulp-babel';
 import eslint from 'gulp-eslint';
 import mocha from 'gulp-mocha';
 import sync from 'gulp-sync';
+import uglify from 'gulp-uglify';
 import { exec } from 'child_process';
 
 const gulpsync = sync(gulp);
@@ -27,6 +28,7 @@ gulp.task('precommit', gulpsync.sync(['lint', 'test']));
 gulp.task('build', ['clean'], () => (
   gulp.src(['src/**/*.js'])
     .pipe(babel())
+    .pipe(uglify())
     .pipe(gulp.dest('dist'))
 ));
 
