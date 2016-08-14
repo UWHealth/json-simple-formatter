@@ -1,20 +1,12 @@
 {
-  "name": "json-simple-formatter",
-  "version": "1.0.1",
-  "description": "format you json, which you changed manually",
-  "main": "index.js",
-  "scripts": {
-    "start": "babel-node src/index",
-    "build": "gulp build",
-    "save": "npm run build && npm i -g",
-    "lint": "gulp lint",
-    "precommit": "gulp precommit"
-  },
+  "author": "vviital",
   "bin": {
     "jsf": "dist/index.js"
   },
-  "author": "vviital",
-  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "description": "format you json, which you changed manually",
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-eslint": "^6.1.2",
@@ -37,7 +29,15 @@
     "husky": "^0.11.6",
     "mocha": "^3.0.2"
   },
-  "dependencies": {
-    "commander": "^2.9.0"
-  }
+  "license": "ISC",
+  "main": "index.js",
+  "name": "json-simple-formatter",
+  "scripts": {
+    "build": "gulp build",
+    "lint": "gulp lint",
+    "precommit": "gulp precommit",
+    "save": "npm run build && npm i -g",
+    "start": "babel-node src/index"
+  },
+  "version": "1.0.1"
 }
