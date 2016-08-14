@@ -6,7 +6,7 @@ import {
   isJsonFile
 } from '../utils/json';
 
-export function formatAction(path = '', { all }) {
+export function formatAction(path = '', { all, space }) {
   const fullPath = _path.join(process.cwd(), path);
   const state = { error: true };
 
@@ -25,7 +25,7 @@ export function formatAction(path = '', { all }) {
   if (all) files = listJsonFiles(fullPath).map(file => _path.join(fullPath, file));
   if (!all) files = [fullPath];
 
-  return files.forEach(file => formatJsonFile(file));
+  return files.forEach(file => formatJsonFile(file, { space }));
 }
 
 export default function (program) {
@@ -33,5 +33,6 @@ export default function (program) {
     .command('format [path]')
     .description('format json file')
     .option('-a, --all', 'format all json files in directory')
+    .option('-s, --space [value]', 'indent')
     .action(formatAction);
 }

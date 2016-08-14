@@ -1,5 +1,6 @@
 import fs from 'fs';
 import _path from 'path';
+import { state } from '../state';
 
 export function isJsonFile(path) {
   const isFile = fs.statSync(path).isFile();
@@ -23,11 +24,15 @@ export function sortJsonProperties(json) {
   return json;
 }
 
-export function formatJsonFile(path) {
+export function formatJsonFile(path, { space = state.space }) {
   const file = fs.readFileSync(path, 'utf8');
   const json = JSON.parse(file);
   const sortedJson = sortJsonProperties(json);
-  const prettyJson = JSON.stringify(sortedJson, null, 2) + '\n';
+
+  // eslint-disable-next-line  no-param-reassign
+  if (!space) space = 2;
+
+  const prettyJson = JSON.stringify(sortedJson, null, +space) + '\n';
 
   fs.writeFileSync(path, prettyJson, 'utf8');
 
