@@ -38,7 +38,14 @@
     "lint": "gulp lint",
     "precommit": "gulp precommit",
     "save": "npm run build && npm i -g",
-    "start": "babel-node src/index"
+    "start": "babel-node src/index",
+    "prepublish": "gulp build"
   },
+  "keywords": [
+    "json",
+    "formatter",
+    "cli",
+    "terminal"
+  ],
   "version": "1.0.2"
 }
