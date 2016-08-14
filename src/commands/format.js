@@ -33,6 +33,6 @@ export default function (program) {
     .command('format [path]')
     .description('format json file')
     .option('-a, --all', 'format all json files in directory')
-    .option('-s, --space [value]', 'indent')
+    .option('-s, --space [value]', 'set value (number of spaces) of indent')
     .action(formatAction);
 }
