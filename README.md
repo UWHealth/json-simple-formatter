@@ -3,7 +3,7 @@
 ## Synopsis
 Custom command line utility for format json files.
 ## Installation
-`$ npm install -g jsf`
+`$ npm install -g json-simple-formatter`
 
 ## Commands
 ### ls
