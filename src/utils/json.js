@@ -8,31 +8,32 @@ export function isJsonFile(path) {
   return isFile && /[.]json$/.test(path);
 }
 
-export function sortJsonProperties(json) {
-  if (typeof json === 'object') {
-    const keys = Object.keys(json).sort((a, b) => a.localeCompare(b));
-    let obj = {};
-
-    keys.forEach((key) => {
-      const currentObject = sortJsonProperties(json[key]);
-
-      obj[key] = currentObject;
-    });
-
-    return obj;
-  }
-  return json;
-}
+// export function sortJsonProperties(json) {
+//   if (typeof json === 'object') {
+//     const keys = Object.keys(json).sort((a, b) => a.localeCompare(b));
+//     let obj = {};
+// 
+//     keys.forEach((key) => {
+//       const currentObject = sortJsonProperties(json[key]);
+//
+//       obj[key] = currentObject;
+//     });
+//
+//     return obj;
+//   }
+//   return json;
+// }
 
 export function formatJsonFile(path, { space = state.space }) {
   const file = fs.readFileSync(path, 'utf8');
   const json = JSON.parse(file);
-  const sortedJson = sortJsonProperties(json);
+  // const sortedJson = sortJsonProperties(json);
 
   // eslint-disable-next-line  no-param-reassign
   if (!space) space = 2;
 
-  const prettyJson = JSON.stringify(sortedJson, null, +space) + '\n';
+  // const prettyJson = JSON.stringify(sortedJson, null, +space) + '\n';
+  const prettyJson = JSON.stringify(json, null, +space) + '\n';
 
   fs.writeFileSync(path, prettyJson, 'utf8');
 

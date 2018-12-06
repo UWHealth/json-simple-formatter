@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<paths>
+		<left>\\uwhis.hosp.wisc.edu\UNC1\ehealth-web\servers\dev\WB-UCAPP\u-connect\content\</left>
+		<right>\\uwhis.hosp.wisc.edu\UNC1\ehealth-web\servers\prod\WB-UCAPP\u-connect\content\</right>
+		<filter>*.json, *.hffy, *.policy, *.cckm, *.rss, *.html</filter>
+		<subfolders>1</subfolders>
+		<left-readonly>0</left-readonly>
+		<right-readonly>0</right-readonly>
+	</paths>
+</project>
